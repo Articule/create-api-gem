@@ -15,11 +15,10 @@
 # specific language governing permissions and limitations
 # under the License.
 
-# Required by Rails
-# require 'json'
-# require 'rest-client'
-# require 'create_api_gem/api_request.rb'
+require 'json'
+require 'rest-client'
+require 'create_api_gem/api_request.rb'
 
-# Gem.find_files('create_api_gem/**/*.rb').each do |path|
-#   require path
-# end
+Gem.find_files('create_api_gem/**/*.rb').each do |path|
+  require path
+end
