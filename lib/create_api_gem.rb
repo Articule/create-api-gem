@@ -17,7 +17,11 @@
 
 require 'json'
 require 'rest-client'
-require 'create_api_gem/api_request.rb'
+
+require 'create_api_gem/api_request'
+
+# Seems to be missing when some race condition occurs
+require 'create_api_gem/forms/block'
 
 Gem.find_files('create_api_gem/**/*.rb').each do |path|
   require path
