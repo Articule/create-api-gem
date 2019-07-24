@@ -1,6 +1,14 @@
 Change logs of create-api-gem
 ====================================================
 
+Version 1.0.4
+----------------------------------
+
+* Remove unnecessary SSL_NONE in a theme request #6c2e41a
+* Force Block require, in the hope of avoiding annoying random issues with
+  "Typeform::Block" not being a known constant name, often in production, with
+  no clear cause. Probably a race condition in Rails constants autoloading.
+
 Version 1.0.3
 ----------------------------------
 
