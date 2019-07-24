@@ -31,8 +31,7 @@ module Typeform
         url: "#{APIConfig.api_request_url}/themes?" + parameters,
         headers: {
           'Authorization' => "Bearer #{token}"
-        },
-        verify_ssl: OpenSSL::SSL::VERIFY_NONE
+        }
       )
     end
 
