@@ -1,6 +1,11 @@
 Change logs of create-api-gem
 ====================================================
 
+Version 1.0.5
+----------------------------------
+
+* Fix missing `randomize` property in `DropdownBlock`
+
 Version 1.0.4
 ----------------------------------
 
