@@ -19,10 +19,10 @@ require_relative 'block'
 
 module Typeform
   class DropdownBlock < Block
-    attr_accessor :id, :title, :type, :ref, :description, :alphabetical_order, :choices, :required, :attachment
+    attr_accessor :id, :title, :type, :ref, :description, :alphabetical_order, :choices, :required, :attachment, :randomize
 
     def initialize(id: nil, title: nil, type: :dropdown, ref: nil, description: nil, alphabetical_order: nil,
-                  choices: nil, required: nil, attachment: nil)
+                  choices: nil, required: nil, attachment: nil, randomize: nil)
       @id = id
       @title = title || DataGenerator.title
       @type = type
@@ -32,6 +32,7 @@ module Typeform
       @choices = choices || DropdownBlock.choices
       @required = required
       @attachment = attachment
+      @randomize = randomize
     end
 
     def self.choices
@@ -51,6 +52,7 @@ module Typeform
       payload[:properties][:choices] = choices
       payload[:properties][:description] = description unless description.nil?
       payload[:properties][:alphabetical_order] = alphabetical_order unless alphabetical_order.nil?
+      payload[:properties][:randomize] = randomize unless randomize.nil?
       unless required.nil?
         payload[:validations] = {}
         payload[:validations][:required] = required
