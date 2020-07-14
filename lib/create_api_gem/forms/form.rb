@@ -17,9 +17,9 @@
 
 module Typeform
   class Form
-    attr_accessor :id, :title, :blocks, :hidden, :theme_url, :workspace_url, :welcome_screens, :thank_you_screens, :logic, :settings, :variables, :are_uploads_public
+    attr_accessor :id, :title, :blocks, :hidden, :theme_url, :workspace_url, :welcome_screens, :thank_you_screens, :logic, :settings, :variables
 
-    def initialize(id: nil, title: nil, blocks: [], hidden: [], theme_url: nil, workspace_url: nil, welcome_screens: [], thank_you_screens: [], logic: [], settings: nil, variables: nil, are_uploads_public: true)
+    def initialize(id: nil, title: nil, blocks: [], hidden: [], theme_url: nil, workspace_url: nil, welcome_screens: [], thank_you_screens: [], logic: [], settings: nil, variables: nil)
       @id = id
       @title = title || DataGenerator.title
       @blocks = blocks
@@ -55,7 +55,6 @@ module Typeform
         logic: logic,
         settings: settings,
         variables: variables,
-        are_uploads_public: are_uploads_public
       )
     end
 
