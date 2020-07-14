@@ -31,7 +31,6 @@ module Typeform
       @logic = logic
       @settings = settings
       @variables = variables
-      @are_uploads_public = are_uploads_public
     end
 
     def self.from_response(payload)
@@ -42,7 +41,6 @@ module Typeform
       logic = payload[:logic].nil? ? [] : payload[:logic].map { |logic_payload| FieldLogic.from_response(logic_payload) }
       settings = Settings.from_response(payload[:settings])
       variables = payload[:variables].nil? ? nil : Variables.from_response(payload[:variables])
-      are_uploads_public = payload[:are_uploads_public]
       new(
         id: payload[:id],
         title: payload[:title],
