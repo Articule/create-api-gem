@@ -1,6 +1,11 @@
 Change logs of create-api-gem
 ====================================================
 
+Version 1.2.5
+----------------------------------
+
+* Fix new `:are_uploads_public` in Form response
+
 Version 1.0.5
 ----------------------------------
 

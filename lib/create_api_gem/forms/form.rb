@@ -17,9 +17,9 @@
 
 module Typeform
   class Form
-    attr_accessor :id, :title, :blocks, :hidden, :theme_url, :workspace_url, :welcome_screens, :thank_you_screens, :logic, :settings, :variables
+    attr_accessor :id, :title, :blocks, :hidden, :theme_url, :workspace_url, :welcome_screens, :thank_you_screens, :logic, :settings, :variables, :are_uploads_public
 
-    def initialize(id: nil, title: nil, blocks: [], hidden: [], theme_url: nil, workspace_url: nil, welcome_screens: [], thank_you_screens: [], logic: [], settings: nil, variables: nil)
+    def initialize(id: nil, title: nil, blocks: [], hidden: [], theme_url: nil, workspace_url: nil, welcome_screens: [], thank_you_screens: [], logic: [], settings: nil, variables: nil, are_uploads_public: true)
       @id = id
       @title = title || DataGenerator.title
       @blocks = blocks
@@ -31,6 +31,7 @@ module Typeform
       @logic = logic
       @settings = settings
       @variables = variables
+      @are_uploads_public = are_uploads_public
     end
 
     def self.from_response(payload)
@@ -41,6 +42,7 @@ module Typeform
       logic = payload[:logic].nil? ? [] : payload[:logic].map { |logic_payload| FieldLogic.from_response(logic_payload) }
       settings = Settings.from_response(payload[:settings])
       variables = payload[:variables].nil? ? nil : Variables.from_response(payload[:variables])
+      are_uploads_public = payload[:are_uploads_public]
       new(
         id: payload[:id],
         title: payload[:title],
@@ -52,7 +54,8 @@ module Typeform
         thank_you_screens: thank_you_screens,
         logic: logic,
         settings: settings,
-        variables: variables
+        variables: variables,
+        are_uploads_public: are_uploads_public
       )
     end
 
@@ -69,6 +72,7 @@ module Typeform
       payload[:logic] = logic.map(&:payload) unless logic.empty?
       payload[:settings] = settings.payload unless settings.nil?
       payload[:variables] = variables.payload unless variables.nil?
+      payload[:are_uploads_public] = are_uploads_public
       payload.to_json
     end
 
