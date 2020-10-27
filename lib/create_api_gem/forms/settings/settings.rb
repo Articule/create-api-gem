@@ -20,12 +20,12 @@ module Typeform
     attr_accessor :redirect_after_submit_url, :show_typeform_branding, :progress_bar,
                   :show_progress_bar, :description, :allow_indexing, :image, :language,
                   :is_public, :is_trial, :google_analytics, :facebook_pixel, :google_tag_manager,
-                  :notifications, :are_uploads_public
+                  :notifications, :are_uploads_public, :show_time_to_complete
 
     def initialize(redirect_after_submit_url: nil, show_typeform_branding: nil, progress_bar: nil,
                   show_progress_bar: nil, description: nil, allow_indexing: nil, image: nil, language: nil,
                   is_public: nil, is_trial: nil, google_analytics: nil, facebook_pixel: nil,
-                  google_tag_manager: nil, notifications: nil, are_uploads_public: true)
+                  google_tag_manager: nil, notifications: nil, are_uploads_public: true, show_time_to_complete: false)
 
       @redirect_after_submit_url = redirect_after_submit_url
       @show_typeform_branding = show_typeform_branding
@@ -42,6 +42,7 @@ module Typeform
       @google_tag_manager = google_tag_manager
       @notifications = notifications
       @are_uploads_public = are_uploads_public
+      @show_time_to_complete = show_time_to_complete
     end
 
     def self.from_response(response)
@@ -71,6 +72,7 @@ module Typeform
         payload[:meta][:image] = image unless image.nil?
       end
       payload[:are_uploads_public] = are_uploads_public
+      payload[:show_time_to_complete] = show_time_to_complete
       payload
     end
 
