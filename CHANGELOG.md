@@ -1,6 +1,11 @@
 Change logs of create-api-gem
 ====================================================
 
+Version 1.2.6
+----------------------------------
+
+* Fix new `:show_time_estimate` in Form settings
+
 Version 1.2.5
 ----------------------------------
 

@@ -69,6 +69,7 @@ module Typeform
       payload[:logic] = logic.map(&:payload) unless logic.empty?
       payload[:settings] = settings.payload unless settings.nil?
       payload[:variables] = variables.payload unless variables.nil?
+      # payload[:show_time_to_complete] = show_time_to_complete
       payload.to_json
     end
 
