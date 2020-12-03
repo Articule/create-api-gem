@@ -1,6 +1,11 @@
 Change logs of create-api-gem
 ====================================================
 
+Version 1.2.7
+----------------------------------
+
+* Fix new `:hide_navigation` in Form settings
+
 Version 1.2.6
 ----------------------------------
 
