@@ -26,7 +26,7 @@ module Typeform
                   show_progress_bar: nil, description: nil, allow_indexing: nil, image: nil, language: nil,
                   is_public: nil, is_trial: nil, google_analytics: nil, facebook_pixel: nil,
                   google_tag_manager: nil, notifications: nil, are_uploads_public: true,
-                  show_time_to_complete: false, hide_navigation: false)
+                  show_time_to_complete: false, hide_navigation: false, capabilities: nil)
 
       @redirect_after_submit_url = redirect_after_submit_url
       @show_typeform_branding = show_typeform_branding
@@ -45,6 +45,7 @@ module Typeform
       @are_uploads_public = are_uploads_public
       @hide_navigation = hide_navigation
       @show_time_to_complete = show_time_to_complete
+      @capabilities = capabilities
     end
 
     def self.from_response(response)
@@ -76,6 +77,7 @@ module Typeform
       payload[:are_uploads_public] = are_uploads_public unless are_uploads_public.nil?
       payload[:show_time_to_complete] = show_time_to_complete unless show_time_to_complete.nil?
       payload[:hide_navigation] = hide_navigation unless hide_navigation.nil?
+      payload[:capabilities] = capabilities unless capabilities.nil?
       payload
     end
 

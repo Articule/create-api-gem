@@ -1,6 +1,11 @@
 Change logs of create-api-gem
 ====================================================
 
+Version 1.2.8
+----------------------------------
+
+* Fix new `:capabilities` in Form settings
+
 Version 1.2.7
 ----------------------------------
 
