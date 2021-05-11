@@ -20,7 +20,8 @@ module Typeform
     attr_accessor :redirect_after_submit_url, :show_typeform_branding, :progress_bar,
                   :show_progress_bar, :description, :allow_indexing, :image, :language,
                   :is_public, :is_trial, :google_analytics, :facebook_pixel, :google_tag_manager,
-                  :notifications, :are_uploads_public, :show_time_to_complete, :hide_navigation
+                  :notifications, :are_uploads_public, :show_time_to_complete, :hide_navigation,
+                  :capabilities
 
     def initialize(redirect_after_submit_url: nil, show_typeform_branding: nil, progress_bar: nil,
                   show_progress_bar: nil, description: nil, allow_indexing: nil, image: nil, language: nil,
