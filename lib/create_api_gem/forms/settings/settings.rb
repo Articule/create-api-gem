@@ -27,7 +27,7 @@ module Typeform
                   show_progress_bar: nil, description: nil, allow_indexing: nil, image: nil, language: nil,
                   is_public: nil, is_trial: nil, google_analytics: nil, facebook_pixel: nil,
                   google_tag_manager: nil, notifications: nil, are_uploads_public: true,
-                  show_time_to_complete: false, hide_navigation: false, capabilities: nil)
+                  show_time_to_complete: false, hide_navigation: false, capabilities: nil, **params)
 
       @redirect_after_submit_url = redirect_after_submit_url
       @show_typeform_branding = show_typeform_branding
@@ -49,7 +49,7 @@ module Typeform
       @capabilities = capabilities
     end
 
-    def self.from_response(response)
+    def self.from_response(response, **params)
       meta = response[:meta]
       settings_params = response.keep_if { |k, _| k != :meta }
       params = meta.merge(settings_params)
