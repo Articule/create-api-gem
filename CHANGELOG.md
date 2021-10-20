@@ -1,6 +1,11 @@
 Change logs of create-api-gem
 ====================================================
 
+Version 1.3.0
+----------------------------------
+
+* Add splash `**params` to the constructors to avoid later errors (new one today)
+
 Version 1.2.8
 ----------------------------------
 

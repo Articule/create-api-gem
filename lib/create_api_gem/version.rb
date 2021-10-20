@@ -16,5 +16,5 @@
 # under the License.
 
 module CreateApiGem
-  VERSION = '1.2.8'.freeze
+  VERSION = '1.3.0'.freeze
 end
