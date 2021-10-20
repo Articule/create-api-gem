@@ -19,7 +19,7 @@ module Typeform
   class Form
     attr_accessor :id, :title, :blocks, :hidden, :theme_url, :workspace_url, :welcome_screens, :thank_you_screens, :logic, :settings, :variables
 
-    def initialize(id: nil, title: nil, blocks: [], hidden: [], theme_url: nil, workspace_url: nil, welcome_screens: [], thank_you_screens: [], logic: [], settings: nil, variables: nil)
+    def initialize(id: nil, title: nil, blocks: [], hidden: [], theme_url: nil, workspace_url: nil, welcome_screens: [], thank_you_screens: [], logic: [], settings: nil, variables: nil, **params)
       @id = id
       @title = title || DataGenerator.title
       @blocks = blocks
@@ -33,7 +33,7 @@ module Typeform
       @variables = variables
     end
 
-    def self.from_response(payload)
+    def self.from_response(payload, **params)
       blocks = payload[:fields].nil? ? [] : payload[:fields].map { |field_payload| Block.from_response(field_payload) }
       welcome_screens = payload[:welcome_screens].nil? ? [] : payload[:welcome_screens].map { |welcome_screen_payload| WelcomeScreen.from_response(welcome_screen_payload) }
       thank_you_screens = payload[:thankyou_screens].map { |thank_you_screen_payload| ThankYouScreen.from_response(thank_you_screen_payload) }
