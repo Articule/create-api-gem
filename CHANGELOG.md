@@ -1,6 +1,26 @@
 Change logs of create-api-gem
 ====================================================
 
+Version 1.2.8
+----------------------------------
+
+* Fix new `:capabilities` in Form settings
+
+Version 1.2.7
+----------------------------------
+
+* Fix new `:hide_navigation` in Form settings
+
+Version 1.2.6
+----------------------------------
+
+* Fix new `:show_time_estimate` in Form settings
+
+Version 1.2.5
+----------------------------------
+
+* Fix new `:are_uploads_public` in Form settings
+
 Version 1.0.5
 ----------------------------------
 
