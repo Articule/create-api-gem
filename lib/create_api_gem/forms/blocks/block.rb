@@ -49,7 +49,7 @@ module Typeform
       validations = response[:validations] || {}
       block_params = response.keep_if { |k, _| k != :properties && k != :validations } || {}
       params = properties.merge(validations).merge(block_params)
-      all_types.fetch(block_symbol_to_string(response[:type])).new(params)
+      all_types.fetch(block_symbol_to_string(response[:type])).new(**params)
     end
 
     def same?(actual)
