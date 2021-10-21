@@ -54,7 +54,7 @@ module Typeform
       end
 
       params = new_respondent_payload.merge(new_self_payload)
-      Notifications.new(params)
+      Notifications.new(**params)
     end
 
     def payload

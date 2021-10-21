@@ -54,7 +54,7 @@ module Typeform
       settings_params = response.keep_if { |k, _| k != :meta }
       params = meta.merge(settings_params)
       params[:notifications] = Notifications.from_response(response[:notifications]) unless response[:notifications].nil?
-      Settings.new(params)
+      Settings.new(**params)
     end
 
     def payload

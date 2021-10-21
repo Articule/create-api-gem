@@ -34,7 +34,7 @@ module Typeform
       properties = response[:properties]
       block_params = response.keep_if { |k, _| k != :properties }
       params = properties.merge(block_params)
-      WelcomeScreen.new(params)
+      WelcomeScreen.new(**params)
     end
 
     def payload
