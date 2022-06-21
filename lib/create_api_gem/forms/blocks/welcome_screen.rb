@@ -19,7 +19,7 @@ module Typeform
   class WelcomeScreen < Block
     attr_accessor :id, :title, :ref, :type, :description, :show_button, :button_text, :attachment
 
-    def initialize(id: nil, title: nil, type: :welcome_screen, ref: nil, description: nil, show_button: nil, button_text: nil, attachment: nil; **params)
+    def initialize(id: nil, title: nil, type: :welcome_screen, ref: nil, description: nil, show_button: nil, button_text: nil, attachment: nil, **params)
       @id = id
       @title = title || DataGenerator.title
       @ref = ref
