@@ -68,7 +68,7 @@ module Typeform
       payload[:google_analytics] = google_analytics unless google_analytics.nil?
       payload[:facebook_pixel] = facebook_pixel unless facebook_pixel.nil?
       payload[:google_tag_manager] = google_tag_manager unless google_tag_manager.nil?
-      payload[:notifications] = notifications.payload unless notifications.nil?
+      # payload[:notifications] = notifications.payload unless notifications.nil?
       unless description.nil? && allow_indexing.nil?
         payload[:meta] = {}
         payload[:meta][:description] = description unless description.nil?
